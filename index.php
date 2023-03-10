@@ -1,14 +1,20 @@
 <?php
 
 require_once 'personnage.php';
-$merlin = new Personnage ("merlin");
+$merlin = new Personnage ("merlin","h",75);
 //$merlin->leviosa();
 $merlin->regenerer(5);
 
-$garen = new Personnage ("harry");
+$garen = new Personnage ("harry","f",65);
 
 
 $merlin->attaque($garen);
+
+$merlin->couleurR();
+$garen->couleurR();
+
+$merlin->algoMati();
+$garen->algoMati();
 
 if ($garen->mort() )
 {

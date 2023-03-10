@@ -5,11 +5,18 @@ class Personnage { //
     public $int= 20;
     public $nom;
     public $enVie=true;
+    
+    public $sex;
+    public $robe;
 
-    public function __construct($nom)
+    public $poids;
+    public $matiere;
+
+    public function __construct($nom,$sex,$poids)
     {
         $this->nom = $nom; //ici on la sauvegarde car si non elle est perdu 
-
+        $this->sex = $sex;
+        $this->poids = $poids;
     }
         //
    public function regenerer($vie=null){ // puis on fait des méthode 
@@ -35,7 +42,27 @@ class Personnage { //
         $cible->vie -= $this->int;
     }
     
+    public function couleurR()
+    {
+        if($this->sex=='f')
+        {
+            $this->robe = "rouge";
+        }
+        else 
+        {
+            $this->robe = "bleue";
+        }
+    }
 
+    public function algoMati()
+    {
+        if($this->poids>=70){
+            $this->matiere = 'potion';
+        }
+        else {
+            $this->matiere = 'kwiditch';
+        }
+    }
 
 
 }
